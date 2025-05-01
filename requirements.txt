@@ -1,0 +1,5 @@
+fastapi[standard]
+SQLAlchemy
+mysqlclient
+alembic
+pydantic_settings
