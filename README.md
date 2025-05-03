@@ -1,6 +1,6 @@
 # Teste de Conhecimento em Backend - Labtel/2025
 
-## Introdução
+## 1. Introdução
 No repositório está o código do teste de conhecimento em backend realizado pelo Laboratório de Telecomunicações. O programa tem como descrição:
 
 > **Dada a necessidade do cliente em gerenciar a movimentação de estoque de produtos, é necessário desenvolver um conjunto de APIs que permitam atender a essa necessidade.**
@@ -16,7 +16,7 @@ No repositório está o código do teste de conhecimento em backend realizado pe
 > - Um endpoint que retorne os dados de movimentação e estoque do produto.
 
 
-## Tecnologias Utilizadas
+## 2. Tecnologias Utilizadas
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
@@ -29,15 +29,15 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - **SQLAlchemy** - ORM (Object Relational Mapper) utilizado para mapear as tabelas do banco de dados em classes Python;
 - **Insomnia** - Ferramenta de testes de API utilizada para realizar requisições e validar os endpoints desenvolvidos;
 
-## Passo a Passo para Rodar o Backend
+## 3. Passo a Passo para Rodar o Backend
 
-### 1. Clonar o Repositório
+### 3.1. Clonar o Repositório
 ```bash
 git clone https://github.com/JoaoGBarros/labtel_backend.git
 cd labtel_backend
 ```
 
-### 2. Configurar o ambiente
+### 3.2. Configurar o ambiente
 
 Caso queira realizar o passo a passo da configuração do ambiente, siga o [roteiro criado pelos alunos do laboratório](https://github.com/EstudosCpid/mini-curso-backend-2025/blob/main/Roteiro_Mini-Curso-Backend.md). Caso deseje popular incialmente o banco de dados, utilize do comando:
 
@@ -66,7 +66,7 @@ O programa irá:
 Após a execução do script, o ambiente estará pronto para desenvolvimento e testes locais.
 
 
-### 3. Execução do prorama
+### 3.3. Execução do prorama
 
 Com o ambiente configurado, basta utilizar o comando:
 
@@ -228,6 +228,6 @@ A API é estruturada em três camadas: (1) Camada de Interface com o Usuário (C
 A camada de Interface com o Usuário atua capturando e respondendo as requisições HTTP. 
 
 Para essa camada, o padrão arquitetônico escolhido foi o Camada de Serviços.
-O padrão Camada de Serviços tem como principal característica o encapsulamento das reras de negócio. 
+O padrão Camada de Serviços tem como principal característica o encapsulamento das regras de negócio. 
 
 Para a Gerência de Dados, aplica-se o padrão Repository, que organiza as classes responsáveis pelas operações de persistência (utilizando mapeamento objeto/relacional) de uma única classe de domínio cada.
