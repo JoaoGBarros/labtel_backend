@@ -27,7 +27,8 @@ async def adicionar_produto(
                 status.HTTP_400_BAD_REQUEST,
                 "Produto já cadastrado.",
             )
-        return produtoService.adicionar_produto(produto, session)
+        produtoService.adicionar_produto(produto, session)
+        return {"message": "Produto adicionado com sucesso."}
     except Exception as e:
         raise HTTPException(
             status.HTTP_400_BAD_REQUEST,
@@ -66,7 +67,8 @@ async def registrar_movimentacao(
                 status.HTTP_404_NOT_FOUND,
                 "Produto não encontrado.",
             )
-        return movimentacaoService.registrar_movimentacao(movimentacao, produto, session)
+        movimentacaoService.registrar_movimentacao(movimentacao, produto, session)
+        return {"message": "Movimentação registrada com sucesso."}
     except Exception as e:
           raise HTTPException(
                 status.HTTP_404_NOT_FOUND,
