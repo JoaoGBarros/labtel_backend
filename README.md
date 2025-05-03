@@ -165,6 +165,8 @@ DB_NAME=  # Nome do banco de dados
     }
     ```
 
+    ou erro caso produto não esteja cadastrado.
+
 ---
 - **Método: GET | Endpoint: /produto/{produto_nome}/movimentacoesSaida**
 
@@ -172,7 +174,7 @@ DB_NAME=  # Nome do banco de dados
 
     - **Path Variable:** Nome do Produto.
 
-    - **Response:** List<Movimentacao>
+    - **Response:** Lista das movimentações de saída do produto.
 
 ---
 - **Método: GET | Endpoint: /produto/{produto_nome}/movimentacoesEntrada**
@@ -181,7 +183,7 @@ DB_NAME=  # Nome do banco de dados
 
     - **Path Variable:** Nome do Produto.
 
-    - **Response:** List<Movimentacao>
+    - **Response:** Lista das movimentações de entrada do produto.
 
 
 ---
@@ -211,7 +213,7 @@ DB_NAME=  # Nome do banco de dados
 
     - **Descrição:** Retorna todos os produtos cadastrados e suas movimentações.
     
-    - **Response:** List<Produto>
+    - **Response:** Lista de Produtos
 
 
 ## 7. Arquitetura da API
