@@ -4,12 +4,14 @@ from sqlalchemy import DateTime, select
 from app.models.movimentacao import Movimentacao
 from app.models.produto import Produto
 from app.repository.movimentacao_repository import MovimentacaoRepository
+from app.repository.produto_repository import ProdutoRepository
 from app.schemas.movimentacao import MovimentacaoRequest
 
 
 class MovimentacaoService:
     def __init__(self):
         self.repository = MovimentacaoRepository()
+        self.produto_repository = ProdutoRepository()
 
     def get_todas_movimentacoes_do_produto(self, produto_id: int, session: Session) -> list[Movimentacao]:
         return self.repository.get_todas_movimentacao_by_produto(produto_id, session)
@@ -37,15 +39,14 @@ class MovimentacaoService:
         movimentacao = Movimentacao(
             produto = produto,
             tipo = movimentacao_req.tipo,
+            produto_id = produto.id,
             quantidade = movimentacao_req.quantidade,
             data = datetime.now()
         )
 
         produto.movimentacoes.append(movimentacao)
 
-        self.repository.update_movimentacao(
-            produto.id, {"estoque": produto.estoque}, session
-        )
+        self.repository.add_movimentacao(movimentacao, session)
 
         return {"message": "Movimentação registrada com sucesso."}
 

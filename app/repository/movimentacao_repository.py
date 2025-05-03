@@ -27,13 +27,3 @@ class MovimentacaoRepository:
         session.add(movimentacao)
         session.commit()
         return movimentacao
-
-    def update_movimentacao(self, produto_id: int, movimentacao_data: dict, session: Session) -> dict:
-        query = (
-            update(Movimentacao)
-            .where(Movimentacao.produto_id == produto_id)
-            .values(**movimentacao_data)
-        )
-        session.execute(query)
-        session.commit()
-        return movimentacao_data
