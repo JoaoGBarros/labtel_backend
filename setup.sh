@@ -26,7 +26,7 @@ FLUSH PRIVILEGES;
 
 echo "Permissões configuradas para conexões remotas!"
 
-# Script para criar o ambiente virtual e executar as migrações do banco de dados
+# Criar o ambiente virtual e executar as migrações do banco de dados
 python3 -m venv .venv
 
 source .venv/bin/activate
@@ -44,7 +44,7 @@ alembic upgrade head
 
 echo "Tabelas criadas com sucesso pelo Alembic!"
 
-# # Executar o script para popular o banco de dados
+# Executar o script para popular o banco de dados
 docker exec -i backend_labtel_container mysql -uroot -pseguranca101 backend_labtel_db < ./db/init.sql
 echo "Banco de dados inicializado com sucesso!"
 
